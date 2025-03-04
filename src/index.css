@@ -2,16 +2,25 @@
 
 
 :root {
-    --body-bg: url('assets/images/banner3.png');
+    --body-bg: url('assets/images/bg.png');
     --modal-bg:url('assets/images/modal-bg.png');
     }
 
+#root{
+    max-width: 100%;
+}
 
 body{
     background: var(--body-bg) no-repeat;
     background-size: cover;
     background-position: bottom;
     height: 100vh;
+    max-height: 100vh;
+}
+
+.card{
+    background: url(assets/images/card-bg.png);
+    background-position: top;
 }
 
 .modal-container{

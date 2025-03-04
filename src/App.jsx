@@ -2,7 +2,6 @@ import { useState,useEffect} from 'react'
 import ShowDetail from "./components/ShowDetail"
 import DisplayList from "./components/DisplayList";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const entries = localStorage.getItem("diaryEntries") || [];
   const [count, setCount] = useState(0)

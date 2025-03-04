@@ -1,7 +1,11 @@
 import { useState,useEffect} from 'react'
 import ShowDetail from "./components/ShowDetail"
+import DisplayList from "./components/DisplayList";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
+  const entries = localStorage.getItem("diaryEntries") || [];
+  const [count, setCount] = useState(0)
   // Razi codes
   const [modalOpen,setModalOpen] = useState(false);
   const [diaryDetail,setDiaryDetail] = useState({
@@ -20,9 +24,14 @@ function App() {
   // }, [diaryDate]);
   }
   // razi codes
+  console.log(entries);
 
   return (
     <>
+      <h1 className="text-4xl text-blue-600 font-bold text-center mb-6" style={{ fontFamily: "'Bebas Neue', cursive" }}>
+        Personal Diary
+      </h1>
+      <DisplayList />
       {/* Razieh codes */}
       <div>
       <i className="fa-solid fa-circle-info cursor-pointer text-[#00514f] text-xl" 

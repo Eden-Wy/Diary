@@ -25,7 +25,9 @@ const DiaryList = () => {
               <p className="text-gray-500">{new Date(entry.date).toLocaleDateString()}</p>
             </div>
           ))}
+          
         </div>
+        
       )}
 
   

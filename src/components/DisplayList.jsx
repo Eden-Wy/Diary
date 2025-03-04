@@ -18,14 +18,11 @@ const DiaryList = () => {
   }, []);
 
   const handleClickModal = (diaryDate) =>{
-    // setModalOpen(true); 
-  //   useEffect(() => {
-  //   const diaryList = JSON.parse(localStorage.getItem(diaries)) || [];
-  //   const selectedDiary = diaryList.filter(diary => diary.date == diaryDate);
-  //   setDiaryDetail(selectedDiary);
-  // }, [diaryDate]);
+    setModalOpen(true);
+    const selectedDiary = entries.find(entry => entry.date == diaryDate);
+    setSelectedEntry(selectedDiary);
   }
-
+ 
   // Sort entries by date (most recent first)
   const sortedEntries = [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -36,13 +33,14 @@ const DiaryList = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pl-[14%]">
           {sortedEntries.map((entry) => (
-            <div className="card border border-[#00514f] p-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div className="card border border-[#00514f] p-4 rounded-lg shadow-sm hover:shadow-lg 
+            transition-shadow duration-300" key={entry.date}>
               <h2 className="text-xl text-center font-semibold text-[#00514f]">{entry.title}</h2>
               <img src={entry.image} alt={entry.title} className="w-full h-40 object-cover rounded-md my-2" />
               <p className="text-[#005477]">{new Date(entry.date).toLocaleDateString()}</p>
               <div>
               <i className="fa-solid fa-circle-info cursor-pointer text-[#00514f] text-xl" 
-              onClick={() => setModalOpen(true)}></i>
+              onClick={() => handleClickModal(entry.date)}></i>
               </div>
             </div>
           ))}

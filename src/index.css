@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+
+:root {
+    --body-bg: url('assets/images/banner3.png');
+    --modal-bg:url('assets/images/modal-bg.png');
+    }
+
+
+body{
+    background: var(--body-bg) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+}
+
+.modal-container{
+    background: var(--modal-bg);
+    background-size: cover;
+    background-position: center;
+}
+
+.closed-modal{
+    display: none;
+    width: 0;
+    height: 0;
+    animation: disappearModal 0.5s ease;
+}
+
+.opened-modal{
+    width: 90%;
+    height: 90%;
+    animation: appearModal 0.5s ease;
+}
+
+@keyframes disappearModal{
+    0%{
+        opacity: 1;
+        display: block;
+        width: 90%;
+        height: 90%;
+        visibility: visible;
+    }
+    100%{
+        
+        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes appearModal{
+    0%{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        display: none;
+    }
+    100%{
+        opacity: 1;
+        width: 90%;
+        height: 90%;
+        display: block;
+    }
+}

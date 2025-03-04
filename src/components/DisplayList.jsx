@@ -34,10 +34,11 @@ const DiaryList = () => {
       {sortedEntries.length === 0 ? (
         <p className="text-center text-lg text-[#005172] my-8">No diary entries yet.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pl-[14%]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pl-[14%]">
           {sortedEntries.map((entry) => (
             <div className="card border border-[#00514f] p-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
               <h2 className="text-xl text-center font-semibold text-[#00514f]">{entry.title}</h2>
+              <img src={entry.image} alt={entry.title} className="w-full h-40 object-cover rounded-md my-2" />
               <p className="text-[#005477]">{new Date(entry.date).toLocaleDateString()}</p>
               <div>
               <i className="fa-solid fa-circle-info cursor-pointer text-[#00514f] text-xl" 
@@ -45,7 +46,9 @@ const DiaryList = () => {
               </div>
             </div>
           ))}
+          
         </div>
+        
       )}
 
       <ShowDetail isOpen={modalOpen} setModalOpen={setModalOpen} selectedEntry={selectedEntry} setSelectedEntry={setSelectedEntry}/>

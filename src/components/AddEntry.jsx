@@ -168,7 +168,7 @@ const AddEntryModal = ({ close, onSave }) => {
     saveEntry(newEntry);
     onSave(newEntry);
 
-    window.location.reload(); // Refresh the page after saving (optional)
+    window.location.reload(); //  Refresh the page after saving (optional)
 
     close();
   };

@@ -159,8 +159,8 @@ const AddEntryModal = ({ close, onSave }) => {
 
     // Prevent duplicate IDs
     const existingEntries = getEntries();
-    if (existingEntries.some((entry) => entry.id === id)) {
-      alert("ID already exists! Please use a unique ID.");
+    if (existingEntries.some((entry) => entry.date === date)) {
+      alert("ID already exists! Please use a unique date.");
       return;
     }
 

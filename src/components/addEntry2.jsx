@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// Function to retrieve stored diary entries
+// Function to retrieve stored diary entries.
 const getEntries = () => {
   return JSON.parse(localStorage.getItem("diaryEntries")) || [];
 };

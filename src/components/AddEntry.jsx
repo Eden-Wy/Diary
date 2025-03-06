@@ -18,106 +18,36 @@
 //         }
 //     ]);
 
-//     const handleChange = (e) => {
-//         setEntryFields({
-//           ...newEntry,
-//           [e.target.name]: e.target.value,
-//         });
-//       };
+    // const handleChange = (e) => {
+    //     setNewEntry({
+    //       ...newEntry,
+    //       [e.target.name]: e.target.value,
+    //     });
+    //   };
 
-//     const submitForm = (e) =>{
-//         e.preventDefault();
-//         setNewEntry(
-//             {
-//                 title: "",
-//                 date: "",
-//                 image: "",
-//                 content: ""
-//             });
-//     }
+    //   useEffect(() => {
+    //     const diaryList = JSON.parse(localStorage.getItem("diaryEntries")) || [];
+    //     console.log(diaryList)
+    //     },[]);
 
-//     return (
-//         <>
-//             <div className= {`modal-container fixed top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2
-//                  rounded-3xl border-2 shadow-md border-[#fff6e0] p-3 ${isAddModalOpen ? "opened-modal" : "closed-modal"}`}>
-//             <div className="bg-[rgba(202,202,202,0.7)] w-full h-full max-h-full overflow-y-scroll p-3 rounded-2xl">
-//                 <i className="fas fa-times-circle text-red-800 absolute -top-[7px] -right-[7px]
-//                 text-3xl cursor-pointer" onClick={()=> setIsAddModalOpen(false)}></i>
-//                 <form onSubmit={submitForm}>
-//                             <div key={newEntry.date}>
-//                                  <input
-//                                     name="Title"
-//                                     placeholder="Enter a title for today's entry"
-//                                     value={newEntry.title}
-//                                     onChange={handleChange}
-//                                 />
-//                                 <input
-//                                     name="date"
-//                                     placeholder='Enter a date for this entry'
-//                                     value={newEntry.date}
-//                                     onChange={handleChange}
-//                                 />
-//                                 <input
-//                                     name="image"
-//                                     placeholder='Image'
-//                                     value={newEntry.image}
-//                                     onChange={handleChange}
-//                                 />
-//                                 <input
-//                                     name="content"
-//                                     placeholder="Dear diary... "
-//                                     value={newEntry.content}
-//                                     onChange={handleChange}
-//                                 />
-//                                 <button type="submit">Enter</button>
-//                             </div>
-//                  </form>
-//             </div>
-      
-//       </div>
-//         </>
-//     // <div className="newEntry">
-//     //   <form onSubmit={submit}>
-//     //     {entryFields.map((entry, index) => {
-//     //         return (
-//     //             <div key={index}>
-//     //                 <input
-//     //                     name="Title"
-//     //                     placeholder="Enter a title for today's entry"
-//     //                     value={entry.title}
-//     //                     onChange={handleChange}
-//     //                 />
-//     //                 <input
-//     //                     name="date"
-//     //                     placeholder='Enter a date for this entry'
-//     //                     value={entry.date}
-//     //                     onChange={handleChange}
-//     //                 />
-//     //                 <input
-//     //                     name="image"
-//     //                     placeholder='Image'
-//     //                     value={entry.imageURL}
-//     //                     onChange={handleChange}
-//     //                 />
-//     //                 <input
-//     //                     name="content"
-//     //                     placeholder="Dear diary... "
-//     //                     value={entry.content}
-//     //                     onChange={handleChange}
-//     //                 />
-//     //             </div>
-//     //         )
-//     //     })}
-//     //  </form>
-//     // </div>
-//     )
-// }
+    // const submitForm = (e) =>{
+    //     e.preventDefault();
+    //     if(!newEntry.title || !newEntry.date || !newEntry.image || !newEntry.content){
+    //         alert("Please fill all the information and try again");
+    //         return;
+    //     }
+        
 
-// export default AddEntry;
+    //     setNewEntry(
+    //         {
+    //             title: "",
+    //             date: "",
+    //             image: "",
+    //             content: ""
+    //         });
+    // }
 
-
-
-import { useState } from "react";
+    import { useState } from "react";
 
 // Function to retrieve stored diary entries
 const getEntries = () => {
@@ -172,8 +102,8 @@ const AddEntryModal = ({ close, onSave }) => {
 
     close();
   };
-
-  return (
+  
+    return (
     <div className="fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50">
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-md">
         <h2 className="text-2xl font-bold mb-4">Add New Entry</h2>
@@ -234,3 +164,47 @@ const AddEntryModal = ({ close, onSave }) => {
 };
 
 export default AddEntryModal;
+
+//     return (
+//         <>
+//             <div className= {`modal-container fixed top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2
+//                  rounded-3xl border-2 shadow-md border-[#fff6e0] p-3 ${isAddModalOpen ? "opened-modal" : "closed-modal"}`}>
+//             <div className="bg-[rgba(202,202,202,0.7)] w-full h-full max-h-full overflow-y-scroll p-3 rounded-2xl">
+//                 <i className="fas fa-times-circle text-red-800 absolute -top-[7px] -right-[7px]
+//                 text-3xl cursor-pointer" onClick={()=> setIsAddModalOpen(false)}></i>
+//                 <form onSubmit={submitForm}>
+//                             <div key={newEntry.date}>
+//                                  <input
+//                                     name="Title"
+//                                     placeholder="Enter a title for today's entry"
+//                                     value={newEntry.title}
+//                                     onChange={handleChange}
+//                                 />
+//                                 <input
+//                                     name="date"
+//                                     placeholder='Enter a date for this entry'
+//                                     value={newEntry.date}
+//                                     onChange={handleChange}
+//                                 />
+//                                 <input
+//                                     name="image"
+//                                     placeholder='Image'
+//                                     value={newEntry.image}
+//                                     onChange={handleChange}
+//                                 />
+//                                 <input
+//                                     name="content"
+//                                     placeholder="Dear diary... "
+//                                     value={newEntry.content}
+//                                     onChange={handleChange}
+//                                 />
+//                                 <button type="submit">Enter</button>
+//                             </div>
+//                  </form>
+//             </div>
+//       </div>
+//     )
+// }
+
+// export default AddEntry;
+
